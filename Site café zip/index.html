@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Café</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>App Café</h1>
+        <input type="text" id="search" placeholder="Buscar produto ou cafeteria">
+        <div class="filters">
+            <button onclick="filterCategory('Todos')">Todos</button>
+            <button onclick="filterCategory('Café')">Café</button>
+            <button onclick="filterCategory('Pão de Queijo')">Pão de Queijo</button>
+            <button onclick="filterCategory('Chá')">Chá</button>
+            <button onclick="filterCategory('Água')">Água</button>
+        </div>
+    </header>
+
+    <main id="home" class="page active">
+        <div id="product-list" class="products"></div>
+    </main>
+
+    <section id="details" class="page">
+        <img id="detail-img" src="" alt="Produto">
+        <h2 id="detail-name"></h2>
+        <p id="detail-cafeteria"></p>
+        <p id="detail-price"></p>
+        <div class="quantity">
+            <button onclick="changeQuantity(-1)">-</button>
+            <span id="quantity">1</span>
+            <button onclick="changeQuantity(1)">+</button>
+        </div>
+        <button onclick="addToCart()">Ir para o Carrinho</button>
+        <button onclick="showPage('home')">Voltar</button>
+    </section>
+
+    <section id="cart" class="page">
+        <h2>Seu Pedido</h2>
+        <ul id="cart-items"></ul>
+        <input type="text" id="address" placeholder="Endereço de entrega">
+        <button onclick="checkout()">Confirmar Pedido</button>
+    </section>
+
+    <section id="tracking" class="page">
+        <h2>Rastreamento</h2>
+        <div id="map">[Mapa aqui]</div>
+        <p>Status: Em rota</p>
+        <a id="whatsapp-link" href="#" target="_blank">Falar com entregador</a>
+    </section>
+
+    <nav class="bottom-nav">
+        <button onclick="showPage('home')">🏠</button>
+        <button onclick="showPage('cart')">🛒</button>
+        <button onclick="showPage('tracking')">📍</button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
